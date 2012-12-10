@@ -1,7 +1,10 @@
 package com.matsuhiro.android.share;
 
+import java.util.Arrays;
+
 import com.facebook.FacebookActivity;
 import com.facebook.SessionState;
+import com.facebook.widget.LoginButton;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +17,8 @@ public class LoginActivity extends FacebookActivity {
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.login_activity);
 		this.setResult(RESULT_CANCELED);
+		LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
+		loginButton.setPublishPermissions(Arrays.asList("publish_actions"));
 	}
 
 	@Override
